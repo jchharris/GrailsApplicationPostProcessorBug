@@ -6,9 +6,7 @@ import grails.util.Holders
 import groovy.util.logging.Slf4j
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.context.ApplicationContext
 import org.springframework.context.support.GenericApplicationContext
-import org.springframework.context.support.GenericXmlApplicationContext
 import org.springframework.core.io.ClassPathResource
 import spock.lang.Specification
 
@@ -20,7 +18,7 @@ class ContextLoaderServiceSpec extends Specification {
     @Autowired
     ContextLoaderService contextLoaderService
 
-    void "testGrailsAppBeingClosed"() {
+    void "test managing child app context"() {
 
         given:
             ClassPathResource myAppCtx = new ClassPathResource("AppCtx.xml")
